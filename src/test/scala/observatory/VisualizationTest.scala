@@ -33,7 +33,16 @@ trait VisualizationTest extends FunSuite with Checkers {
     (Location(50, 50), -55d)
   )
 
-  def testVisualiseTester(correctColor: Color, temperature: Double): Unit ={
+  val testTemps2 = Seq(
+    (Location(0, -180), 32d),
+    //    (Location(0, 180), 32d),
+    (Location(90, 0), -15d)
+    //    (Location(-90, 0), -15d),
+    //    (Location(0, 0), 0d)
+  )
+
+
+  def testVisualiseTester(correctColor: Color, temperature: Double): Unit = {
     val color = Visualization.interpolateColor(colors, temperature)
     assert(color == correctColor)
   }
@@ -53,18 +62,41 @@ trait VisualizationTest extends FunSuite with Checkers {
     testVisualiseTester(Color(128, 255, 128), 6d)
 
   }
+  test("predict temperature for -90 180"){
+    val temp = Visualization.predictTemperature(testTemps2, Location(90, -180))
+    assert(!temp.isNaN)
+  }
+
 
   test("get image for test data") {
     val image = Visualization.visualize(testTemps, colors)
-    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\image.bmp""")
+    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\testTempsImage.bmp""")
   }
 
-  test("get image for real data") {
+
+  /*test("get image for test dat 2") {
+    val image = Visualization.visualize(testTemps2, colors)
+    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\testTemps2Image.bmp""")
+    val computedColor = Color(image.pixel(0, 0).red, image.pixel(0, 0).green, image.pixel(0, 0).blue)
+    val shouldBeCloserToColor = Color(255, 0, 0)
+    val shouldntBeCloserToColor = Color(0, 0, 255)
+
+    val correctDif = ColorDifference(computedColor, shouldBeCloserToColor)
+    val incorrectDif = ColorDifference(computedColor, shouldntBeCloserToColor)
+
+    assert(correctDif < incorrectDif)
+  }*/
+
+  private def ColorDifference(color1: Color, color2: Color) = {
+    (color2.red - color1.red).abs + (color2.green - color1.green).abs + (color2.blue - color1.blue).abs
+  }
+
+  /*test("get image for real data") {
     val temps = Extraction.locateTemperatures(2000, "/stations.csv", "/2000.csv").toList
     val result = Extraction.locationYearlyAverageRecords(temps).toList
     val image = Visualization.visualize(result, colors)
-    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\image2.bmp""")
-  }
+    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\realDataImage.bmp""")
+  }*/
 
 
 }
