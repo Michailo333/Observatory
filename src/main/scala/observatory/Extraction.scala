@@ -13,8 +13,8 @@ object Extraction {
 
   @transient lazy val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Observatory")
   @transient lazy val sc: SparkContext = new SparkContext(conf)
-
-  /**
+  sc.setLogLevel("WARN")
+    /**
     * @param year             Year number
     * @param stationsFile     Path of the stations resource file to use (e.g. "/stations.csv")
     * @param temperaturesFile Path of the temperatures resource file to use (e.g. "/1975.csv")
@@ -29,7 +29,7 @@ object Extraction {
     val stationsRDD = stations
       .filter(line => {
         val arr = line.split(",")
-        (arr.length == 4 && (arr(0) != "" || arr(1) != "") && arr(2) != "" && arr(3) != "")
+        arr.length == 4 && (arr(0) != "" || arr(1) != "") && arr(2) != "" && arr(3) != ""
       })
       .map(line => {
         val arr = line.split(",")
@@ -43,7 +43,7 @@ object Extraction {
     val temperaturesRDD = temperatures
       .filter(line => {
         val arr = line.split(",")
-        (arr.length == 5 && (arr(0) != "" || arr(1) != "") && arr(2) != "" && arr(3) != "" && arr(4) != "")
+        arr.length == 5 && (arr(0) != "" || arr(1) != "") && arr(2) != "" && arr(3) != "" && arr(4) != ""
       })
       .map(line => {
         val arr = line.split(",")

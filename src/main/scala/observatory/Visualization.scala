@@ -8,7 +8,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object Visualization {
 
-  val power: Double = 6
+  val power: Double = 4
 
   /**
     * @param temperatures Known temperatures: pairs containing a location and the temperature at this location
@@ -16,10 +16,12 @@ object Visualization {
     * @return The predicted temperature at `location`
     */
   def predictTemperature(temperatures: Iterable[(Location, Double)], location: Location): Double = {
-    if (!temperatures.filter(pair => pair._1 == location).isEmpty) {
-      temperatures.filter(pair => pair._1 == location).head._2
+    if (temperatures.exists(pair => distance(pair._1, location)==0)) {
+      temperatures.filter(pair => distance(pair._1, location)==0).head._2
     } else {
-      temperatures.foldLeft(0d)((acc, pair) => acc + weight(pair._1, location) * pair._2) / temperatures.foldLeft(0d)((acc, pair) => acc + weight(pair._1, location))
+      val p1 = temperatures.foldLeft(0d)((acc, pair) => acc + weight(pair._1, location) * pair._2)
+      val p2 = temperatures.foldLeft(0d)((acc, pair) => acc + weight(pair._1, location))
+      p1 / p2
     }
   }
 
@@ -41,10 +43,10 @@ object Visualization {
     * @return The color that corresponds to `value`, according to the color scale defined by `points`
     */
   def interpolateColor(points: Iterable[(Double, Color)], value: Double): Color = {
-    if(points.isEmpty || value.isNaN){
-      Color(255,255,255)
+    if (points.isEmpty || value.isNaN) {
+      Color(255, 255, 255)
     }
-    else if (!points.filter(p => p._1 == value).isEmpty) {
+    else if (points.exists(p => p._1 == value)) {
       points.filter(p => p._1 == value).head._2
     }
     else if (points.forall(p => value > p._1)) {
@@ -66,11 +68,9 @@ object Visualization {
 
       Color(red, green, blue)
     }
-
-
   }
 
-  def createPixel(color:Color): Pixel={
+  def createPixel(color: Color): Pixel = {
     Pixel(color.red, color.green, color.blue, 255)
   }
 
@@ -80,14 +80,15 @@ object Visualization {
     * @return A 360×180 image where each pixel shows the predicted temperature at its location
     */
   def visualize(temperatures: Iterable[(Location, Double)], colors: Iterable[(Double, Color)]): Image = {
-    var lats= Extraction.sc.parallelize(-89 to 90)
-    var lons=Extraction.sc.parallelize(-180 until 180)
-    var matrix = lats.cartesian(lons).map(pair=>Location(pair._1, pair._2))
-    val pixelMatrix = matrix.map(loc=> (loc, createPixel(interpolateColor(colors, predictTemperature(temperatures, loc)))))
+    var lons = Extraction.sc.parallelize(-180 to 179)
+    var lats = Extraction.sc.parallelize(-89 to 90)
+    var matrix = lats.cartesian(lons).map(pair => Location(pair._1, pair._2))
+    val pixelMatrix = matrix.map(loc => (loc, createPixel(interpolateColor(colors, predictTemperature(temperatures, loc)))))
 
     var array: Array[Pixel] = new Array[Pixel](360 * 180)
-    pixelMatrix.collect().foreach(pair=>{
-      array((pair._1.lon.toInt + 180) + (pair._1.lat.toInt + 89) * 360)=pair._2
+    pixelMatrix.collect().foreach(pair => {
+      array((pair._1.lon.toInt + 180) + (-pair._1.lat.toInt + 90) * 360) = pair._2
+      //array((pair._1.lat.toInt + 89) + (pair._1.lon.toInt + 180) * 180) = pair._2
     })
 
     Image(360, 180, array)
