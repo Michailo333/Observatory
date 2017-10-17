@@ -18,13 +18,13 @@ trait InteractionTest extends FunSuite with Checkers {
     (-60d, Color(0, 0, 0))
   ).toSeq
 
-  def generateImageImpl(year: Int, zoom: Int, x: Int, y: Int, data: Iterable[(Location, Double)]): Unit = {
+  /*def generateImageImpl(year: Int, zoom: Int, x: Int, y: Int, data: Iterable[(Location, Double)]): Unit = {
     val image = Interaction.tile(data, colors, zoom, x, y)
-    val stringPath = Extraction.fsPath(String.format("/tiles/%d.%d.%d.bmp", year, x, y))
+    val stringPath = Extraction.fsPath(String.format("/tiles/%i.%i.%i.bmp", year, x, y))
     image.output(stringPath)
-  }
+  }*/
 
-  test("get image for test data") {
+  test("get first tile") {
     val testTemps = Seq(
       (Location(-50, -50), 50d),
       (Location(-50, 0), 32d),
@@ -38,8 +38,8 @@ trait InteractionTest extends FunSuite with Checkers {
     )
 
 
-    val image = Interaction.generateTiles(List(2000, testTemps),)
-    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\testTempsImage.bmp""")
+    val image = Interaction.tile(testTemps, colors, 0, 0, 0)
+    image.output("""C:\Users\mprushin\Desktop\Scala\observatory\firstTile.bmp""")
   }
 
 
