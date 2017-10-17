@@ -21,8 +21,8 @@ object Interaction {
     /*val lat = Math.atan(Math.sinh(Math.PI * (1 - 2 * y / n)))
     val lon = (x / (n * 2) - 1) * Math.PI*/
 
-    val lat = Math.toDegrees(Math.atan(Math.sinh(Math.PI * (1 - 2 * y * 2 / n))))
-    val lon = Math.toDegrees((x * 2 / (n * 2) - 1) * Math.PI)
+    val lat = Math.toDegrees(Math.atan(Math.sinh(Math.PI * (1 - 2 * y / n))))
+    val lon = Math.toDegrees((x / (n * 2) - 1) * Math.PI)
 
     Location(lat, lon)
   }
@@ -36,13 +36,13 @@ object Interaction {
     * @return A 256×256 image showing the contents of the tile defined by `x`, `y` and `zooms`
     */
   def tile(temperatures: Iterable[(Location, Double)], colors: Iterable[(Double, Color)], zoom: Int, x: Int, y: Int): Image = {
-    val x_add = Extraction.sc.parallelize(0 to 255 by 2)
-    val y_add = Extraction.sc.parallelize(0 to 255 by 2)
+    val x_add = Extraction.sc.parallelize(0 to 255)
+    val y_add = Extraction.sc.parallelize(0 to 255)
     val matrix = x_add.cartesian(y_add).map(pair => (pair._1, pair._2, tileLocation(zoom + 8, x * 256 + pair._1, y * 256 + pair._2)))
     val pixelMatrix = matrix.map(loc => (loc._1, loc._2, createPixel(interpolateColor(colors, predictTemperature(temperatures, loc._3)))))
     val array = pixelMatrix.map(pair => (pair._1 + pair._2 * 256, pair._3)).sortBy(pair => pair._1).collect().map(pair => pair._2)
 
-    Image(128, 128, array).scale(2)
+    Image(256, 256, array)
 
   }
 
@@ -59,27 +59,19 @@ object Interaction {
                            generateImage: (Int, Int, Int, Int, Data) => Unit
                          ): Unit = {
     yearlyData.foreach(pair => {
-      generateImage(pair._1, 0, 0, 0, pair._2)
-      generateForYearAndZoomLevel(pair._2, pair._1, 1, generateImage)
+      (0 to 3).flatMap(zoomLevel => generateForYearAndZoomLevel(pair._1, zoomLevel, pair._2))
+        .foreach(params => generateImage(params._1, params._2, params._3, params._4, params._5))
     })
   }
 
-  def generateForYearAndZoomLevel[Data](data: Data,
-                                        year: Int,
+  def generateForYearAndZoomLevel[Data](year: Int,
                                         zoomLevel: Int,
-                                        generateImage: (Int, Int, Int, Int, Data) => Unit
-                                       ): Unit = {
+                                        data: Data
+                                       ): Iterable[(Int, Int, Int, Int, Data)] = {
+    val x = 0 until Math.pow(2, zoomLevel).toInt
+    val y = 0 until Math.pow(2, zoomLevel).toInt
 
-    /*generateImage(year, zoomLevel, pair._1, pair._2, data)
-    generateImage(year, zoomLevel, pair._1 + 1, pair._2, data)
-    generateImage(year, zoomLevel, pair._1, pair._2 + 1, data)
-    generateImage(year, zoomLevel, pair._1 + 1, pair._2 + 1, data)
-    if (zoomLevel < 3) {
-      generateRecursive(data, year, zoomLevel + 1, generateImage)
-    }
-  }*/
-
-
+    x.flatMap(x_val => y.map(y_val => (x_val, y_val))).map(pair => (year, zoomLevel, pair._1, pair._2, data))
   }
 
 }
