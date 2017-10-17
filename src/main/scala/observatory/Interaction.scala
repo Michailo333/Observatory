@@ -21,8 +21,8 @@ object Interaction {
     /*val lat = Math.atan(Math.sinh(Math.PI * (1 - 2 * y / n)))
     val lon = (x / (n * 2) - 1) * Math.PI*/
 
-    val lat = Math.toDegrees(Math.atan(Math.sinh(Math.PI * (1 - 2 * y / n))))
-    val lon = Math.toDegrees((x / (n * 2) - 1) * Math.PI)
+    val lat = Math.toDegrees(Math.atan(Math.sinh(Math.PI * (1 - 2 * y * 2 / n))))
+    val lon = Math.toDegrees((x * 2 / (n * 2) - 1) * Math.PI)
 
     Location(lat, lon)
   }
@@ -36,17 +36,13 @@ object Interaction {
     * @return A 256×256 image showing the contents of the tile defined by `x`, `y` and `zooms`
     */
   def tile(temperatures: Iterable[(Location, Double)], colors: Iterable[(Double, Color)], zoom: Int, x: Int, y: Int): Image = {
-    var x_add = Extraction.sc.parallelize(0 to 255)
-    var y_add = Extraction.sc.parallelize(0 to 255)
-    var matrix = x_add.cartesian(y_add).map(pair => (pair._1, pair._2, tileLocation(zoom + 1, x * 256 + pair._1, y * 256 + pair._2)))
+    val x_add = Extraction.sc.parallelize(0 to 127)
+    val y_add = Extraction.sc.parallelize(0 to 127)
+    val matrix = x_add.cartesian(y_add).map(pair => (pair._1, pair._2, tileLocation(zoom + 1, x * 128 + pair._1, y * 128 + pair._2)))
     val pixelMatrix = matrix.map(loc => (loc._1, loc._2, createPixel(interpolateColor(colors, predictTemperature(temperatures, loc._3)))))
+    val array = pixelMatrix.map(pair=>(pair._1 + pair._2 * 128, pair._3)).sortBy(pair=>pair._1).collect().map(pair=>pair._2)
 
-    var array: Array[Pixel] = new Array[Pixel](256 * 256)
-    pixelMatrix.collect().foreach(pair => {
-      array(pair._1 + pair._2 * 256) = pair._3
-    })
-
-    Image(256, 256, array)
+    Image(128, 128, array).scale(2)
 
   }
 
@@ -62,10 +58,10 @@ object Interaction {
                            yearlyData: Iterable[(Int, Data)],
                            generateImage: (Int, Int, Int, Int, Data) => Unit
                          ): Unit = {
-    yearlyData.foreach(pair=>{
+    /*yearlyData.foreach(pair=>{
       generateImage(pair._1, 0, 0, 0, pair._2)
       generateRecursive(pair._2, pair._1, 1, generateImage)
-    })
+    })*/
   }
 
   def generateRecursive[Data](data: Data,
@@ -74,10 +70,10 @@ object Interaction {
                               generateImage: (Int, Int, Int, Int, Data) => Unit
                              ): Unit = {
 
-      var x = Extraction.sc.parallelize(0 to 255)
-      var y = Extraction.sc.parallelize(0 to 255)
+      val x = Extraction.sc.parallelize(0 to 255)
+      val y = Extraction.sc.parallelize(0 to 255)
 
-      var matrix = x.cartesian(y)
+      val matrix = x.cartesian(y)
       matrix.collect().foreach(pair => {
         generateImage(year, zoomLevel, pair._1, pair._2, data)
         if (zoomLevel < 3) {

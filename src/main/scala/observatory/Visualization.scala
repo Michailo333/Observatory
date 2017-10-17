@@ -80,16 +80,17 @@ object Visualization {
     * @return A 360×180 image where each pixel shows the predicted temperature at its location
     */
   def visualize(temperatures: Iterable[(Location, Double)], colors: Iterable[(Double, Color)]): Image = {
-    var lons = Extraction.sc.parallelize(-180 to 179)
-    var lats = Extraction.sc.parallelize(-89 to 90)
-    var matrix = lats.cartesian(lons).map(pair => Location(pair._1, pair._2))
+    val lons = Extraction.sc.parallelize(-180 to 179)
+    val lats = Extraction.sc.parallelize(-89 to 90)
+    val matrix = lats.cartesian(lons).map(pair => Location(pair._1, pair._2))
     val pixelMatrix = matrix.map(loc => (loc, createPixel(interpolateColor(colors, predictTemperature(temperatures, loc)))))
 
-    var array: Array[Pixel] = new Array[Pixel](360 * 180)
-    pixelMatrix.collect().foreach(pair => {
+    //val array: Array[Pixel] = new Array[Pixel](360 * 180)
+    val array = pixelMatrix.map(pair=>((pair._1.lon.toInt + 180) + (-pair._1.lat.toInt + 90) * 360, pair._2)).sortBy(pair=>pair._1).map(pair=>pair._2).collect()
+      /*foreach(pair => {
       array((pair._1.lon.toInt + 180) + (-pair._1.lat.toInt + 90) * 360) = pair._2
       //array((pair._1.lat.toInt + 89) + (pair._1.lon.toInt + 180) * 180) = pair._2
-    })
+    })*/
 
     Image(360, 180, array)
   }

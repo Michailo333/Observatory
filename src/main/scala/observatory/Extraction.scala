@@ -21,8 +21,6 @@ object Extraction {
     * @return A sequence containing triplets (date, location, temperature)
     */
   def locateTemperatures(year: Int, stationsFile: String, temperaturesFile: String): Iterable[(LocalDate, Location, Double)] = {
-    println(stationsFile)
-    println(temperaturesFile)
     val stations = sc.textFile(fsPath(stationsFile))
     val temperatures = sc.textFile(fsPath(temperaturesFile))
 
