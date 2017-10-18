@@ -5,6 +5,7 @@ val arr = "010013,,1,1".split(",")
 arr.length
 val list = List((1, Pixel(1, 2, 3, 4)), (2, Pixel(1, 2, 3, 4)), (3, Pixel(1, 2, 3, 4)), (4, Pixel(1, 2, 3, 4)), (5, Pixel(1, 2, 3, 4)))
 
+val y = 0 until Math.pow(2, 2).toInt
 
 
 val a = new Array[Pixel](100)
