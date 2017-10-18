@@ -7,7 +7,7 @@ import scala.collection.concurrent.TrieMap
 
 trait InteractionTest extends FunSuite with Checkers {
 
-  val colors = List(
+  val colors1 = List(
     (60d, Color(255, 255, 255)),
     (32d, Color(255, 0, 0)),
     (12d, Color(255, 255, 0)),
@@ -38,7 +38,7 @@ trait InteractionTest extends FunSuite with Checkers {
     )
 
 
-    val image = Interaction.tile(testTemps, colors, 0, 0, 0)
+    val image = Interaction.tile(testTemps, colors1, 0, 0, 0)
     image.output("""C:\Users\mprushin\Desktop\Scala\observatory\firstTile.bmp""")
   }
 

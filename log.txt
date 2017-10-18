@@ -1,0 +1,271 @@
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+	deleted:    project/project/target/config-classes/$1eff8edb9f18675d02f3$.class
+	deleted:    project/project/target/config-classes/$1eff8edb9f18675d02f3.cache
+	deleted:    project/project/target/config-classes/$1eff8edb9f18675d02f3.class
+	deleted:    project/project/target/config-classes/$3abd050df47b822df689$$anonfun$$sbtdef$1.class
+	deleted:    project/project/target/config-classes/$3abd050df47b822df689$.class
+	deleted:    project/project/target/config-classes/$3abd050df47b822df689.cache
+	deleted:    project/project/target/config-classes/$3abd050df47b822df689.class
+	deleted:    project/project/target/config-classes/$864eea6e0de43c6875ed$$anonfun$$sbtdef$1.class
+	deleted:    project/project/target/config-classes/$864eea6e0de43c6875ed$.class
+	deleted:    project/project/target/config-classes/$864eea6e0de43c6875ed.cache
+	deleted:    project/project/target/config-classes/$864eea6e0de43c6875ed.class
+	deleted:    project/project/target/config-classes/$97de1be5195602861895$.class
+	deleted:    project/project/target/config-classes/$97de1be5195602861895.cache
+	deleted:    project/project/target/config-classes/$97de1be5195602861895.class
+	deleted:    project/project/target/config-classes/$bfb2b6c88bfa3b631376$.class
+	deleted:    project/project/target/config-classes/$bfb2b6c88bfa3b631376.cache
+	deleted:    project/project/target/config-classes/$bfb2b6c88bfa3b631376.class
+	deleted:    project/project/target/config-classes/$ea8bce810c25df4da16e$$anonfun$$sbtdef$1.class
+	deleted:    project/project/target/config-classes/$ea8bce810c25df4da16e$.class
+	deleted:    project/project/target/config-classes/$ea8bce810c25df4da16e.cache
+	deleted:    project/project/target/config-classes/$ea8bce810c25df4da16e.class
+	deleted:    project/project/target/config-classes/$f125ccf52cedf5e4c9fc$$anonfun$$sbtdef$1.class
+	deleted:    project/project/target/config-classes/$f125ccf52cedf5e4c9fc$.class
+	deleted:    project/project/target/config-classes/$f125ccf52cedf5e4c9fc.cache
+	deleted:    project/project/target/config-classes/$f125ccf52cedf5e4c9fc.class
+	deleted:    project/target/config-classes/$0f1ee66b00734667879d$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$0f1ee66b00734667879d$.class
+	deleted:    project/target/config-classes/$0f1ee66b00734667879d.cache
+	deleted:    project/target/config-classes/$0f1ee66b00734667879d.class
+	deleted:    project/target/config-classes/$1629dd113c2e84f37672$$anonfun$$sbtdef$1$$anonfun$apply$1.class
+	deleted:    project/target/config-classes/$1629dd113c2e84f37672$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$1629dd113c2e84f37672$.class
+	deleted:    project/target/config-classes/$1629dd113c2e84f37672.cache
+	deleted:    project/target/config-classes/$1629dd113c2e84f37672.class
+	deleted:    project/target/config-classes/$31e0e32e697100a1d1f4$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$31e0e32e697100a1d1f4$.class
+	deleted:    project/target/config-classes/$31e0e32e697100a1d1f4.cache
+	deleted:    project/target/config-classes/$31e0e32e697100a1d1f4.class
+	deleted:    project/target/config-classes/$8bcddb8aeaf5b976eb9c$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$8bcddb8aeaf5b976eb9c$.class
+	deleted:    project/target/config-classes/$8bcddb8aeaf5b976eb9c.cache
+	deleted:    project/target/config-classes/$8bcddb8aeaf5b976eb9c.class
+	deleted:    project/target/config-classes/$8fe5c7d161aed697a1db$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$8fe5c7d161aed697a1db$.class
+	deleted:    project/target/config-classes/$8fe5c7d161aed697a1db.cache
+	deleted:    project/target/config-classes/$8fe5c7d161aed697a1db.class
+	deleted:    project/target/config-classes/$92bb0b51cef267f60529$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$92bb0b51cef267f60529$.class
+	deleted:    project/target/config-classes/$92bb0b51cef267f60529.cache
+	deleted:    project/target/config-classes/$92bb0b51cef267f60529.class
+	deleted:    project/target/config-classes/$a9b1849ad5286d075ebe$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$a9b1849ad5286d075ebe$.class
+	deleted:    project/target/config-classes/$a9b1849ad5286d075ebe.cache
+	deleted:    project/target/config-classes/$a9b1849ad5286d075ebe.class
+	deleted:    project/target/config-classes/$beba7f6e0a85a743cc46$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$beba7f6e0a85a743cc46$.class
+	deleted:    project/target/config-classes/$beba7f6e0a85a743cc46.cache
+	deleted:    project/target/config-classes/$beba7f6e0a85a743cc46.class
+	deleted:    project/target/config-classes/$befbb54faf9621ad4455$$anonfun$$sbtdef$1.class
+	deleted:    project/target/config-classes/$befbb54faf9621ad4455$.class
+	deleted:    project/target/config-classes/$befbb54faf9621ad4455.cache
+	deleted:    project/target/config-classes/$befbb54faf9621ad4455.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$1.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$2.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$3.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$4.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$5.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$6.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$7.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$$anonfun$8.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa$.class
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa.cache
+	deleted:    project/target/config-classes/$fe4218e046ff0b9221fa.class
+	modified:   project/target/resolution-cache/default/observatory-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties
+	modified:   project/target/resolution-cache/default/observatory-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-compile-internal.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-compile.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-docs.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-optional.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-plugin.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-pom.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-provided.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-runtime-internal.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-runtime.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-scala-tool.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-sources.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-test-internal.xml
+	modified:   project/target/resolution-cache/reports/default-observatory-build-test.xml
+	modified:   project/target/scala-2.10/sbt-0.13/classes/GradingFeedback.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/ScalaTestRunner$LimitedStringBuffer.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/StudentBuildLike$$anonfun$12$$anonfun$apply$10.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/StudentBuildLike$$anonfun$submitLocalSetting$1$$anonfun$apply$2$$anonfun$apply$3.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/StudentBuildLike$$anonfun$submitSetting$1$$anonfun$apply$5$$anonfun$apply$6$$anonfun$11.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/StudentBuildLike$$anonfun$submitSetting$1$$anonfun$apply$5$$anonfun$apply$6$$anonfun$7.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/StudentBuildLike$$anonfun$submitSetting$1$$anonfun$apply$5$$anonfun$apply$6.class
+	modified:   project/target/scala-2.10/sbt-0.13/classes/StyleChecker$.class
+	modified:   project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp
+	modified:   project/target/streams/$global/update/$global/streams/update_cache_2.10/inputs
+	modified:   project/target/streams/$global/update/$global/streams/update_cache_2.10/output
+	modified:   project/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.10
+	modified:   src/main/resources/1975.csv
+	modified:   src/main/resources/1976.csv
+	modified:   src/main/resources/1977.csv
+	modified:   src/main/resources/1978.csv
+	modified:   src/main/resources/1979.csv
+	modified:   src/main/resources/1980.csv
+	modified:   src/main/resources/1981.csv
+	modified:   src/main/resources/1982.csv
+	modified:   src/main/resources/1983.csv
+	modified:   src/main/resources/1984.csv
+	modified:   src/main/resources/1985.csv
+	modified:   src/main/resources/1986.csv
+	modified:   src/main/resources/1987.csv
+	modified:   src/main/resources/1988.csv
+	modified:   src/main/resources/1989.csv
+	modified:   src/main/resources/1990.csv
+	modified:   src/main/resources/1991.csv
+	modified:   src/main/resources/1992.csv
+	modified:   src/main/resources/1993.csv
+	modified:   src/main/resources/1994.csv
+	modified:   src/main/resources/1995.csv
+	modified:   src/main/resources/1996.csv
+	modified:   src/main/resources/1997.csv
+	modified:   src/main/resources/1998.csv
+	modified:   src/main/resources/1999.csv
+	modified:   src/main/resources/2000.csv
+	modified:   src/main/resources/2001.csv
+	modified:   src/main/resources/2002.csv
+	modified:   src/main/resources/2003.csv
+	modified:   src/main/resources/2004.csv
+	modified:   src/main/resources/2005.csv
+	modified:   src/main/resources/2006.csv
+	modified:   src/main/resources/2007.csv
+	modified:   src/main/resources/2008.csv
+	modified:   src/main/resources/2009.csv
+	modified:   src/main/resources/2010.csv
+	modified:   src/main/resources/2011.csv
+	modified:   src/main/resources/2012.csv
+	modified:   src/main/resources/2013.csv
+	modified:   src/main/resources/2014.csv
+	modified:   src/main/resources/2015.csv
+	modified:   src/main/resources/stations.csv
+	modified:   src/main/scala/observatory/Extraction.scala
+	modified:   src/main/scala/observatory/Grading.scala
+	modified:   src/main/scala/observatory/Interaction.scala
+	modified:   src/main/scala/observatory/Interaction2.scala
+	modified:   src/main/scala/observatory/Main.scala
+	modified:   src/main/scala/observatory/Manipulation.scala
+	modified:   src/main/scala/observatory/Signal.scala
+	modified:   src/main/scala/observatory/Visualization.scala
+	modified:   src/main/scala/observatory/Visualization2.scala
+	modified:   src/main/scala/observatory/models.scala
+	modified:   src/main/scala/test.sc
+	modified:   src/test/resources/1975.csv
+	modified:   src/test/resources/stations.csv
+	modified:   src/test/scala/observatory/CapstoneSuite.scala
+	modified:   src/test/scala/observatory/ExtractionTest.scala
+	modified:   src/test/scala/observatory/Interaction2Test.scala
+	modified:   src/test/scala/observatory/InteractionTest.scala
+	modified:   src/test/scala/observatory/ManipulationTest.scala
+	modified:   src/test/scala/observatory/Visualization2Test.scala
+	modified:   src/test/scala/observatory/VisualizationTest.scala
+
+Untracked files:
+	.idea/
+	capstone-ui/target/
+	log.txt
+	project/project/target/config-classes/$21943911297ece4fa3d2$$anonfun$$sbtdef$1.class
+	project/project/target/config-classes/$21943911297ece4fa3d2$.class
+	project/project/target/config-classes/$21943911297ece4fa3d2.cache
+	project/project/target/config-classes/$21943911297ece4fa3d2.class
+	project/project/target/config-classes/$286a23d12960a1978c47$$anonfun$$sbtdef$1.class
+	project/project/target/config-classes/$286a23d12960a1978c47$.class
+	project/project/target/config-classes/$286a23d12960a1978c47.cache
+	project/project/target/config-classes/$286a23d12960a1978c47.class
+	project/project/target/config-classes/$53800ca6351ab7d980f4$$anonfun$$sbtdef$1.class
+	project/project/target/config-classes/$53800ca6351ab7d980f4$.class
+	project/project/target/config-classes/$53800ca6351ab7d980f4.cache
+	project/project/target/config-classes/$53800ca6351ab7d980f4.class
+	project/project/target/config-classes/$53aec149869fde8fb556$$anonfun$$sbtdef$1.class
+	project/project/target/config-classes/$53aec149869fde8fb556$.class
+	project/project/target/config-classes/$53aec149869fde8fb556.cache
+	project/project/target/config-classes/$53aec149869fde8fb556.class
+	project/project/target/config-classes/$6db6b5139ef4ec2e5956$.class
+	project/project/target/config-classes/$6db6b5139ef4ec2e5956.cache
+	project/project/target/config-classes/$6db6b5139ef4ec2e5956.class
+	project/project/target/config-classes/$b3899344ad4d324a4cf0$.class
+	project/project/target/config-classes/$b3899344ad4d324a4cf0.cache
+	project/project/target/config-classes/$b3899344ad4d324a4cf0.class
+	project/project/target/config-classes/$ceb47386536038880351$.class
+	project/project/target/config-classes/$ceb47386536038880351.cache
+	project/project/target/config-classes/$ceb47386536038880351.class
+	project/target/config-classes/$141040bd2f8046ca2777$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$141040bd2f8046ca2777$.class
+	project/target/config-classes/$141040bd2f8046ca2777.cache
+	project/target/config-classes/$141040bd2f8046ca2777.class
+	project/target/config-classes/$143cd9d5795b6b3fbdca$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$143cd9d5795b6b3fbdca$.class
+	project/target/config-classes/$143cd9d5795b6b3fbdca.cache
+	project/target/config-classes/$143cd9d5795b6b3fbdca.class
+	project/target/config-classes/$3723f7eba92d6442db24$$anonfun$$sbtdef$1$$anonfun$apply$1.class
+	project/target/config-classes/$3723f7eba92d6442db24$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$3723f7eba92d6442db24$$anonfun$$sbtdef$2.class
+	project/target/config-classes/$3723f7eba92d6442db24$$anonfun$$sbtdef$3.class
+	project/target/config-classes/$3723f7eba92d6442db24$.class
+	project/target/config-classes/$3723f7eba92d6442db24.cache
+	project/target/config-classes/$3723f7eba92d6442db24.class
+	project/target/config-classes/$40e6e153b1985b946613$$anonfun$$sbtdef$1$$anonfun$apply$1.class
+	project/target/config-classes/$40e6e153b1985b946613$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$40e6e153b1985b946613$.class
+	project/target/config-classes/$40e6e153b1985b946613.cache
+	project/target/config-classes/$40e6e153b1985b946613.class
+	project/target/config-classes/$7076e142fc2fea7b3cbf$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$7076e142fc2fea7b3cbf$.class
+	project/target/config-classes/$7076e142fc2fea7b3cbf.cache
+	project/target/config-classes/$7076e142fc2fea7b3cbf.class
+	project/target/config-classes/$909f3ca01bf508f9ea7d$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$909f3ca01bf508f9ea7d$.class
+	project/target/config-classes/$909f3ca01bf508f9ea7d.cache
+	project/target/config-classes/$909f3ca01bf508f9ea7d.class
+	project/target/config-classes/$a26e4e37f4c2a41875dd$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$a26e4e37f4c2a41875dd$.class
+	project/target/config-classes/$a26e4e37f4c2a41875dd.cache
+	project/target/config-classes/$a26e4e37f4c2a41875dd.class
+	project/target/config-classes/$a2fba37a2e156ba80151$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$a2fba37a2e156ba80151$.class
+	project/target/config-classes/$a2fba37a2e156ba80151.cache
+	project/target/config-classes/$a2fba37a2e156ba80151.class
+	project/target/config-classes/$cf5e2243c7af5de66591$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$cf5e2243c7af5de66591$.class
+	project/target/config-classes/$cf5e2243c7af5de66591.cache
+	project/target/config-classes/$cf5e2243c7af5de66591.class
+	project/target/config-classes/$d00459b512d66b028b36$$anonfun$$sbtdef$1.class
+	project/target/config-classes/$d00459b512d66b028b36$.class
+	project/target/config-classes/$d00459b512d66b028b36.cache
+	project/target/config-classes/$d00459b512d66b028b36.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$1.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$2.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$3.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$4.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$5.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$6.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$7.class
+	project/target/config-classes/$d72b8d92be927954d954$$anonfun$8.class
+	project/target/config-classes/$d72b8d92be927954d954$.class
+	project/target/config-classes/$d72b8d92be927954d954.cache
+	project/target/config-classes/$d72b8d92be927954d954.class
+	project/target/streams/$global/$global/
+	project/target/streams/$global/ivyConfiguration/
+	project/target/streams/$global/ivySbt/
+	project/target/streams/$global/projectDescriptors/
+	project/target/streams/$global/update/$global/streams/out
+	project/target/streams/compile/$global/
+	project/target/streams/compile/compile/
+	project/target/streams/compile/compileIncremental/
+	project/target/streams/compile/copyResources/
+	project/target/streams/compile/dependencyClasspath/
+	project/target/streams/compile/exportedProducts/
+	project/target/streams/compile/externalDependencyClasspath/
+	project/target/streams/compile/internalDependencyClasspath/
+	project/target/streams/compile/managedClasspath/
+	project/target/streams/compile/unmanagedClasspath/
+	project/target/streams/compile/unmanagedJars/
+	project/target/streams/runtime/
+	target/
+
+no changes added to commit
