@@ -71,7 +71,7 @@ object Visualization {
   }
 
   def createPixel(color: Color): Pixel = {
-    Pixel(color.red, color.green, color.blue, 255)
+    Pixel(color.red, color.green, color.blue, 127)
   }
 
   /**
