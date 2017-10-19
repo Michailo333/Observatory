@@ -59,14 +59,22 @@ object Interaction {
                            generateImage: (Int, Int, Int, Int, Data) => Unit
                          ): Unit = {
     yearlyData.foreach(pair => {
-      (0 to 3).flatMap(zoomLevel => generateForYearAndZoomLevel(pair._1, zoomLevel, pair._2))
+      (0 to 3).flatMap(zoomLevel => generateTilesForYearAndZoomLevel(pair._1, zoomLevel, pair._2))
         .foreach(params => generateImage(params._1, params._2, params._3, params._4, params._5))
     })
   }
 
-  def generateForYearAndZoomLevel[Data](year: Int,
-                                        zoomLevel: Int,
-                                        data: Data
+  /**
+    * Generates tiles for definite year and zoom level
+    *
+    * @param year - Year
+    * @param zoomLevel - Zoom Level
+    * @param data - some 'data' associated with 'year'. The type can be anything
+    * @return Sequence on (year, zoomLevel, x, y, data) compatible with generateImage method
+    */
+  def generateTilesForYearAndZoomLevel[Data](year: Int,
+                                             zoomLevel: Int,
+                                             data: Data
                                        ): Iterable[(Int, Int, Int, Int, Data)] = {
     val x = 0 until Math.pow(2, zoomLevel).toInt
     val y = 0 until Math.pow(2, zoomLevel).toInt

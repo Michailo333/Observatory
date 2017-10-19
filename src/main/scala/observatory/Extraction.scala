@@ -14,6 +14,7 @@ object Extraction {
   @transient lazy val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Observatory")
   @transient lazy val sc: SparkContext = new SparkContext(conf)
   sc.setLogLevel("WARN")
+
     /**
     * @param year             Year number
     * @param stationsFile     Path of the stations resource file to use (e.g. "/stations.csv")
@@ -68,6 +69,10 @@ object Extraction {
     sc.parallelize(records.toSeq).map(pair => (pair._2, pair._3)).groupByKey.map(pair => (pair._1, pair._2.sum / pair._2.count(a => true))).toLocalIterator.toSeq
   }
 
+  /**
+    * @param resource Relative URL to file
+    * @return Absolute Path to resource.
+    */
   def fsPath(resource: String): String =
     Paths.get(getClass.getResource(resource).toURI).toString
 

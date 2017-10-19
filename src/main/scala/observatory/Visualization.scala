@@ -25,15 +25,28 @@ object Visualization {
     }
   }
 
-  def weight(location: Location, location1: Location): Double = {
-    1 / Math.pow(distance(location, location1), power)
+  /**
+    * Calculate Weigth by two locations for interpolation method
+    * @param location1 - First location
+    * @param location2 - Second location
+    * @return Weight
+    */
+  def weight(location1: Location, location2: Location): Double = {
+    1 / Math.pow(distance(location1, location2), power)
   }
 
-  def distance(location: Location, location1: Location): Double = {
+  /**
+    * Calculate Distance between two locations
+    *
+    * @param loctaion1 - First location
+    * @param location2 - Second location
+    * @return Distance
+    */
+  def distance(loctaion1: Location, location2: Location): Double = {
     Math.acos(
-      Math.sin(location.lat * Math.PI / 180) * Math.sin(location1.lat * Math.PI / 180) +
-        Math.cos(location.lat * Math.PI / 180) * Math.cos(location1.lat * Math.PI / 180) *
-          Math.cos(location1.lon * Math.PI / 180 - location.lon * Math.PI / 180)
+      Math.sin(loctaion1.lat * Math.PI / 180) * Math.sin(location2.lat * Math.PI / 180) +
+        Math.cos(loctaion1.lat * Math.PI / 180) * Math.cos(location2.lat * Math.PI / 180) *
+          Math.cos(location2.lon * Math.PI / 180 - loctaion1.lon * Math.PI / 180)
     )
   }
 
@@ -70,6 +83,11 @@ object Visualization {
     }
   }
 
+  /**
+    * Creates half-transparent Pixel by Color
+    * @param color - Color of Pixel
+    * @return - Pixel
+    */
   def createPixel(color: Color): Pixel = {
     Pixel(color.red, color.green, color.blue, 127)
   }
@@ -85,12 +103,7 @@ object Visualization {
     val matrix = lats.cartesian(lons).map(pair => Location(pair._1, pair._2))
     val pixelMatrix = matrix.map(loc => (loc, createPixel(interpolateColor(colors, predictTemperature(temperatures, loc)))))
 
-    //val array: Array[Pixel] = new Array[Pixel](360 * 180)
     val array = pixelMatrix.map(pair=>((pair._1.lon.toInt + 180) + (-pair._1.lat.toInt + 90) * 360, pair._2)).sortBy(pair=>pair._1).map(pair=>pair._2).collect()
-      /*foreach(pair => {
-      array((pair._1.lon.toInt + 180) + (-pair._1.lat.toInt + 90) * 360) = pair._2
-      //array((pair._1.lat.toInt + 89) + (pair._1.lon.toInt + 180) * 180) = pair._2
-    })*/
 
     Image(360, 180, array)
   }

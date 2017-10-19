@@ -54,7 +54,13 @@ object Visualization2 {
     Image(256, 256, array)
   }
 
-
+  /**
+    * Calculates value by grid and coordinates
+    * @param grid - Grid with data
+    * @param x - X value
+    * @param y - Y value
+    * @return Interpolated value for (X, Y) point
+    */
   def calculateValue( grid: (Int, Int)=>Double, x: Double, y: Double): Double={
     val x0 = x.floor.toInt
     val x1 = x.ceil.toInt
